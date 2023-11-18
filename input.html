@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #resultBox {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 5s ease infinite;
+        height: 100vh;
+        }
+
+        @keyframes gradient {
+        0% {
+        background-position: 0% 50%;
+        }
+ 
+        50% {
+        background-position: 100% 50%;
+        }
+ 
+        100% {
+        background-position: 0% 50%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <h2>PRE-FINALS EXAM</h2>
+    <h3>Number Properties Checker</h3>
+    <p>Enter a number:</p>
+    <input type="number" id="numInput" name="numInput">
+    <button onclick="checkNumberProperties()">Check Number Properties</button>
+    <div id="resultBox"></div>
+
+    <script>
+        function checkNumberProperties() {
+            var num = document.getElementById('numInput').value;
+
+            var odds = [1];
+            var evens = [];
+
+            for (var i = 2; i <= num; i++) {
+                if (i % 2 === 0) {
+                    evens.push(i);
+                } else {
+                    odds.push(i);
+                }
+            }
+
+            var result = '<h2>Number Properties:</h2>';
+            result += '<p>Prime number: ' + num + '</p>';
+            result += '<p>Odd numbers: ' + odds.join(', ') + '</p>';
+            result += '<p>Even numbers: ' + evens.join(', ') + '</p>';
+
+            document.getElementById('resultBox').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
